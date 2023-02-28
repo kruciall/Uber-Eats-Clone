@@ -9,7 +9,7 @@ export default function App() {
     <View style={styles.container}>
       {/* <HomeScreen/> */}
       <RestaurantDetailsPage />
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }
