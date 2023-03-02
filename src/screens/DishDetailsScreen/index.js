@@ -33,7 +33,7 @@ const getTotal = () => {
       </View>
 
       <View style={styles.button}>
-        <Text style={styles.buttonText}>Add {quantity} to cart (${getTotal()})</Text>
+        <Text style={styles.buttonText}>Add {quantity} to cart &#8226; ${getTotal()}</Text>
       </View>
     </View>
   )
