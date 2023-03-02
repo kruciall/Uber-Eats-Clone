@@ -1,23 +1,10 @@
-import { useState } from 'react';
 import { StyleSheet, View, Text, FlatList } from 'react-native';
 import restaurants from '../../../assets/data/restaurants.json';
 import React from 'react';
-import { AntDesign } from '@expo/vector-icons';
+import CartDishItem from '../../components/CartDishItem';
 
 const restaurant = restaurants[0];
 
-
-const CartDishItem = ({ cartDish }) => {
-  return (
-    <View style={styles.row}>
-      <View style={styles.quantityContainer}>
-        <Text>1</Text>
-      </View>
-      <Text style={styles.itemName}>{cartDish.name}</Text>
-      <Text style={styles.quantityPrice}>${cartDish.price}</Text>
-    </View>
-  );
-};
 
 const Cart = () => {
   return (
