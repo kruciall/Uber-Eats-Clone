@@ -2,11 +2,22 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import RootNavigator from './src/navigation';
 
-export default function App() {
+//These three lines connect our Amplify to front end
+import { Amplify } from 'aws-amplify'; 
+import { withAuthenticator } from 'aws-amplify-react-native';
+import config from './src/aws-exports';
+Amplify.configure(config);
+
+
+
+
+function App() {
   return (
     <NavigationContainer>
         <RootNavigator />
         <StatusBar style="light" />
     </NavigationContainer>
   );
-};
+}
+
+export default withAuthenticator(App);
