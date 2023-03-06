@@ -6,6 +6,7 @@ import DishDetailsScreen from '../screens/DishDetailsScreen';
 import Cart from '../screens/Cart';
 import OrderScreen from '../screens/OrdersScreen';
 import OrderDetails from '../screens/OrderDetailsScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 import { Foundation, MaterialIcons , FontAwesome5  } from '@expo/vector-icons';
 
@@ -25,10 +26,10 @@ const Tab = createMaterialBottomTabNavigator();
 
 const HomeTabs = () => {
   return (
-    <Tab.Navigator barStyle={{ backgroundColor: 'white'}}>
+    <Tab.Navigator screenOptions={{headerShown: false}} barStyle={{ backgroundColor: 'white'}}>
       <Tab.Screen name="Home" component={HomeStackNavigator} options={{ tabBarIcon: ({ color }) => (<Foundation name="home" size={24} color={color} />) }} />
       <Tab.Screen name="Orders" component={OrdersStackNavigator} options={{ tabBarIcon: ({ color }) => (<MaterialIcons name="list-alt" size={24} color={color} />) }} />
-      <Tab.Screen name="Profile" component={OrderScreen} options={{ tabBarIcon: ({ color }) => (<FontAwesome5 name="user-alt" size={24} color={color} />) }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ tabBarIcon: ({ color }) => (<FontAwesome5 name="user-alt" size={24} color={color} />) }} />
     </Tab.Navigator>
   );
 };
@@ -38,7 +39,7 @@ const HomeStackNavigator = () => {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Restaurants" component={HomeScreen}/>
-      <HomeStack.Screen name="Restaurant" component={RestaurantDetailsPage}/>
+      <HomeStack.Screen name="Restaurant" component={RestaurantDetailsPage} options={{headerShown: false}}/>
       <HomeStack.Screen name="Dish" component={DishDetailsScreen}/>
       <HomeStack.Screen name="Cart" component={Cart}/>
     </HomeStack.Navigator>
